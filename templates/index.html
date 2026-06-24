@@ -1,0 +1,1879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Nanyuki Law Advocates</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f4f4f0;
+            color: #2c2c2c;
+            line-height: 1.6;
+            font-size: 16px;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding-bottom: 70px;
+        }
+
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            width: 100%;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: #1a1a1a;
+            color: #ccc;
+            padding: 0.5rem 0;
+            font-size: 0.8rem;
+            width: 100%;
+        }
+
+        .top-bar .wrapper {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.5rem 1rem;
+            align-items: center;
+        }
+
+        .top-bar a {
+            color: #ccc;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+
+        .top-bar a:hover {
+            color: #c9a84c;
+        }
+
+        .top-bar i {
+            margin-right: 0.4rem;
+            color: #c9a84c;
+            width: 1.2rem;
+            text-align: center;
+        }
+
+        .top-bar .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.5rem;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            padding: 0.8rem 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+        }
+
+        header .wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .logo h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+
+        .logo span {
+            font-size: 0.7rem;
+            color: #888;
+            display: block;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem 1.2rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1a1a1a;
+            font-weight: 500;
+            font-size: 0.85rem;
+            padding: 0.4rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        nav a:hover, nav a.active {
+            border-bottom-color: #c9a84c;
+            color: #c9a84c;
+        }
+
+        nav a i {
+            margin-right: 0.3rem;
+            font-size: 0.75rem;
+        }
+
+        /* Mobile Bottom Navigation */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+            padding: 0.5rem 0;
+            z-index: 1000;
+            border-top: 2px solid #c9a84c;
+        }
+
+        .mobile-nav .wrapper {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0;
+        }
+
+        .mobile-nav a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #888;
+            font-size: 0.6rem;
+            font-weight: 500;
+            padding: 0.3rem 0.5rem;
+            transition: 0.2s;
+            min-width: 50px;
+            text-align: center;
+            border: none;
+            border-bottom: 3px solid transparent;
+        }
+
+        .mobile-nav a i {
+            font-size: 1.3rem;
+            margin-bottom: 0.15rem;
+            color: #888;
+        }
+
+        .mobile-nav a.active {
+            color: #c9a84c;
+        }
+
+        .mobile-nav a.active i {
+            color: #c9a84c;
+        }
+
+        .mobile-nav a.active {
+            border-bottom-color: #c9a84c;
+        }
+
+        .mobile-nav a:hover {
+            color: #c9a84c;
+        }
+
+        .mobile-nav a:hover i {
+            color: #c9a84c;
+        }
+
+        /* Pages */
+        .page {
+            display: none;
+            animation: fadeIn 0.3s ease;
+            padding: 2rem 0;
+        }
+
+        .page.active-page {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0.3; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 3.5rem 3rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '⚖️';
+            position: absolute;
+            right: -20px;
+            bottom: -40px;
+            font-size: 18rem;
+            opacity: 0.04;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 650px;
+        }
+
+        .hero .tag {
+            display: inline-block;
+            background: #c9a84c;
+            color: #1a1a1a;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 0.2rem 1.2rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 0.8rem;
+        }
+
+        .hero h2 span {
+            color: #c9a84c;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            opacity: 0.85;
+            max-width: 550px;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: #c9a84c;
+            color: #1a1a1a;
+            padding: 0.75rem 2.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary:hover {
+            background: #b89535;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(201, 168, 76, 0.35);
+        }
+
+        .btn-outline {
+            display: inline-block;
+            background: transparent;
+            color: white;
+            padding: 0.75rem 2.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.3);
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 0.75rem 2.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-whatsapp:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #1a1a1a;
+            margin-bottom: 0.3rem;
+        }
+
+        .section-subtitle {
+            color: #888;
+            font-size: 0.95rem;
+            font-weight: 300;
+            margin-bottom: 1.8rem;
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: white;
+            padding: 1.5rem 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            transition: 0.3s;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+        }
+
+        .stat-item .number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #c9a84c;
+        }
+
+        .stat-item .label {
+            font-size: 0.8rem;
+            color: #888;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Cards */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.8rem 1.5rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            transition: 0.3s;
+            border-left: 3px solid #c9a84c;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        .card .icon {
+            font-size: 2rem;
+            color: #c9a84c;
+            margin-bottom: 0.8rem;
+        }
+
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            color: #1a1a1a;
+            margin-bottom: 0.4rem;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        /* Testimonials */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 1.8rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            position: relative;
+            transition: 0.3s;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+        }
+
+        .testimonial .stars {
+            color: #c9a84c;
+            font-size: 1rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .testimonial p {
+            font-size: 0.95rem;
+            font-style: italic;
+            color: #444;
+            line-height: 1.7;
+        }
+
+        .testimonial .client {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #1a1a1a;
+            margin-top: 0.8rem;
+        }
+
+        .testimonial .client span {
+            font-weight: 300;
+            color: #888;
+            font-style: normal;
+        }
+
+        /* Lawyers Grid */
+        .lawyer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .lawyer-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.8rem 1.2rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            transition: 0.3s;
+        }
+
+        .lawyer-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        .lawyer-card .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #c9a84c, #b89535);
+            margin: 0 auto 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .lawyer-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            color: #1a1a1a;
+        }
+
+        .lawyer-card .title {
+            font-size: 0.8rem;
+            color: #c9a84c;
+            font-weight: 500;
+        }
+
+        .lawyer-card .speciality {
+            font-size: 0.85rem;
+            color: #666;
+            margin: 0.3rem 0;
+        }
+
+        .lawyer-card .contact-info {
+            font-size: 0.75rem;
+            color: #888;
+            margin-top: 0.6rem;
+        }
+
+        .lawyer-card .contact-info a {
+            color: #888;
+            text-decoration: none;
+            display: block;
+            padding: 0.15rem 0;
+            transition: 0.2s;
+        }
+
+        .lawyer-card .contact-info a:hover {
+            color: #c9a84c;
+        }
+
+        /* About */
+        .about-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .about-grid .main {
+            flex: 2;
+            min-width: 260px;
+        }
+
+        .about-grid .main p {
+            font-size: 0.95rem;
+            color: #444;
+            margin-bottom: 0.8rem;
+            font-weight: 300;
+            line-height: 1.7;
+        }
+
+        .about-grid .main p i {
+            color: #c9a84c;
+            margin-right: 0.5rem;
+        }
+
+        .about-grid .sidebar {
+            flex: 1;
+            min-width: 220px;
+            background: #1a1a1a;
+            color: #ccc;
+            padding: 1.8rem;
+            border-radius: 8px;
+        }
+
+        .about-grid .sidebar h4 {
+            font-family: 'Playfair Display', serif;
+            color: white;
+            font-size: 1.15rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .about-grid .sidebar p {
+            margin: 0.6rem 0;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .about-grid .sidebar i {
+            color: #c9a84c;
+            width: 1.4rem;
+            text-align: center;
+            margin-top: 0.2rem;
+            flex-shrink: 0;
+        }
+
+        .value-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.8rem;
+            margin: 1rem 0 1.5rem;
+        }
+
+        .value-item {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+        .value-item i {
+            color: #c9a84c;
+            font-size: 1rem;
+            width: 1.5rem;
+            text-align: center;
+        }
+
+        /* Contact */
+        .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+        }
+
+        .contact-form-container {
+            flex: 1.5;
+            min-width: 280px;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+        }
+
+        .contact-form-container h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .contact-form-container .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .contact-form-container label {
+            font-weight: 500;
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 0.3rem;
+            color: #1a1a1a;
+        }
+
+        .contact-form-container input,
+        .contact-form-container textarea {
+            width: 100%;
+            padding: 0.7rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            background: #fafafa;
+            transition: 0.2s;
+        }
+
+        .contact-form-container input:focus,
+        .contact-form-container textarea:focus {
+            outline: none;
+            border-color: #c9a84c;
+            box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1);
+            background: white;
+        }
+
+        .contact-form-container textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-form-container button {
+            background: #c9a84c;
+            color: #1a1a1a;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-form-container button:hover {
+            background: #b89535;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(201, 168, 76, 0.3);
+        }
+
+        .contact-info-side {
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .contact-info-side .info-card {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 8px;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+        }
+
+        .contact-info-side .info-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: #1a1a1a;
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-info-side .info-card p {
+            margin: 0.6rem 0;
+            font-size: 0.9rem;
+            color: #444;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-info-side .info-card i {
+            color: #c9a84c;
+            width: 1.4rem;
+            text-align: center;
+        }
+
+        .map-box {
+            background: #e8e4dc;
+            border-radius: 8px;
+            padding: 1.8rem;
+            text-align: center;
+            color: #1a1a1a;
+        }
+
+        .map-box i {
+            font-size: 2.5rem;
+            color: #c9a84c;
+            margin-bottom: 0.5rem;
+        }
+
+        .map-box p {
+            font-size: 0.9rem;
+        }
+
+        .alert {
+            padding: 1rem 1.5rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            background: #e6f4ea;
+            border-left: 4px solid #1e7e34;
+            color: #1a1a1a;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .alert.show {
+            display: block;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #1a1a1a;
+            color: white;
+            padding: 3rem 2.5rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .cta-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-section p {
+            font-weight: 300;
+            opacity: 0.8;
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+        }
+
+        .cta-section .btn {
+            display: inline-block;
+            background: #c9a84c;
+            color: #1a1a1a;
+            padding: 0.8rem 2.8rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-section .btn:hover {
+            background: #b89535;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(201, 168, 76, 0.3);
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: #888;
+            padding: 2.5rem 0 2rem;
+            margin-top: 2rem;
+        }
+
+        footer .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        footer .footer-text {
+            font-size: 0.85rem;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        footer .footer-text strong {
+            color: #ccc;
+        }
+
+        footer .footer-text .contact-line {
+            font-size: 0.75rem;
+            opacity: 0.6;
+        }
+
+        footer .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 0.3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        footer .social-links a {
+            color: #888;
+            font-size: 1.3rem;
+            transition: 0.3s;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        footer .social-links a:hover {
+            color: #c9a84c;
+            transform: translateY(-3px);
+        }
+
+        footer .social-links a span {
+            font-size: 0.7rem;
+            font-weight: 300;
+        }
+
+        .lawyer-badge {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #f8f6f2;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .lawyer-badge i {
+            color: #c9a84c;
+            margin-right: 0.5rem;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+            z-index: 999;
+            text-decoration: none;
+            transition: 0.3s;
+            animation: pulse 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* ========== RESPONSIVE DESIGN ========== */
+
+        /* Tablets & Small Laptops */
+        @media screen and (max-width: 1024px) {
+            .hero h2 {
+                font-size: 2.4rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Tablets & Large Phones */
+        @media screen and (max-width: 768px) {
+            body {
+                padding-bottom: 65px;
+            }
+
+            .top-bar .wrapper {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 0.3rem 1rem;
+            }
+
+            .top-bar .contact-info {
+                justify-content: center;
+            }
+
+            header .wrapper {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            /* Hide desktop nav on mobile */
+            .desktop-nav {
+                display: none !important;
+            }
+
+            /* Show mobile nav */
+            .mobile-nav {
+                display: block !important;
+            }
+
+            .hero {
+                padding: 2.5rem 1.8rem;
+                text-align: center;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero::before {
+                font-size: 12rem;
+                right: -10px;
+                bottom: -20px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .stat-item {
+                padding: 1rem;
+            }
+
+            .stat-item .number {
+                font-size: 1.8rem;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .lawyer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid {
+                flex-direction: column;
+            }
+
+            .about-grid .sidebar {
+                order: -1;
+            }
+
+            .contact-wrapper {
+                flex-direction: column;
+            }
+
+            .value-list {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .cta-section h3 {
+                font-size: 1.4rem;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.6rem;
+                bottom: 75px;
+                right: 15px;
+            }
+        }
+
+        /* Mobile Phones */
+        @media screen and (max-width: 480px) {
+            body {
+                font-size: 15px;
+                padding-bottom: 60px;
+            }
+
+            .wrapper {
+                padding: 0 1rem;
+            }
+
+            .top-bar {
+                font-size: 0.7rem;
+            }
+
+            .top-bar .contact-info {
+                flex-direction: column;
+                gap: 0.2rem;
+            }
+
+            .logo h1 {
+                font-size: 1.4rem;
+            }
+
+            .logo span {
+                font-size: 0.6rem;
+            }
+
+            .hero {
+                padding: 1.8rem 1.2rem;
+                border-radius: 8px;
+            }
+
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .hero .tag {
+                font-size: 0.6rem;
+                padding: 0.15rem 0.8rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            .btn-primary, .btn-outline, .btn-whatsapp {
+                width: 100%;
+                text-align: center;
+                padding: 0.6rem 1.5rem;
+                font-size: 0.8rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .section-subtitle {
+                font-size: 0.85rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.8rem;
+            }
+
+            .stat-item {
+                padding: 0.8rem;
+            }
+
+            .stat-item .number {
+                font-size: 1.5rem;
+            }
+
+            .stat-item .label {
+                font-size: 0.65rem;
+            }
+
+            .card {
+                padding: 1.2rem;
+            }
+
+            .card .icon {
+                font-size: 1.6rem;
+            }
+
+            .card h3 {
+                font-size: 1rem;
+            }
+
+            .card p {
+                font-size: 0.85rem;
+            }
+
+            .lawyer-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .lawyer-card {
+                padding: 1.2rem;
+            }
+
+            .lawyer-card .avatar {
+                width: 60px;
+                height: 60px;
+                font-size: 1.4rem;
+            }
+
+            .testimonial {
+                padding: 1.2rem;
+            }
+
+            .testimonial p {
+                font-size: 0.9rem;
+            }
+
+            .contact-form-container {
+                padding: 1.2rem;
+            }
+
+            .contact-form-container h3 {
+                font-size: 1.1rem;
+            }
+
+            .contact-form-container input,
+            .contact-form-container textarea {
+                font-size: 0.85rem;
+                padding: 0.6rem 0.8rem;
+            }
+
+            .contact-info-side .info-card {
+                padding: 1.2rem;
+            }
+
+            .about-grid .main p {
+                font-size: 0.9rem;
+            }
+
+            .about-grid .sidebar {
+                padding: 1.2rem;
+            }
+
+            .about-grid .sidebar p {
+                font-size: 0.85rem;
+            }
+
+            .cta-section {
+                padding: 1.5rem 1rem;
+            }
+
+            .cta-section h3 {
+                font-size: 1.2rem;
+            }
+
+            .cta-section p {
+                font-size: 0.9rem;
+            }
+
+            .cta-section .btn {
+                padding: 0.6rem 1.8rem;
+                font-size: 0.8rem;
+                width: 100%;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            .cta-buttons .btn,
+            .cta-buttons .btn-whatsapp {
+                width: 100%;
+            }
+
+            .map-box {
+                padding: 1.2rem;
+            }
+
+            .map-box i {
+                font-size: 2rem;
+            }
+
+            footer .footer-text {
+                font-size: 0.75rem;
+            }
+
+            footer .footer-text .contact-line {
+                font-size: 0.65rem;
+            }
+
+            footer .social-links a {
+                font-size: 1.1rem;
+            }
+
+            footer .social-links a span {
+                display: none;
+            }
+
+            .lawyer-badge {
+                font-size: 0.8rem;
+                padding: 0.8rem;
+            }
+
+            .alert {
+                font-size: 0.85rem;
+                padding: 0.8rem 1rem;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                bottom: 70px;
+                right: 12px;
+            }
+
+            .mobile-nav a {
+                font-size: 0.5rem;
+                min-width: 40px;
+                padding: 0.2rem 0.3rem;
+            }
+
+            .mobile-nav a i {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Very Small Phones */
+        @media screen and (max-width: 360px) {
+            .hero h2 {
+                font-size: 1.3rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.5rem;
+            }
+
+            .stat-item .number {
+                font-size: 1.3rem;
+            }
+
+            .wrapper {
+                padding: 0 0.8rem;
+            }
+
+            .mobile-nav a {
+                font-size: 0.45rem;
+                min-width: 35px;
+            }
+
+            .mobile-nav a i {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Landscape phones */
+        @media screen and (max-height: 500px) and (orientation: landscape) {
+            .hero {
+                padding: 1.5rem;
+                min-height: auto;
+            }
+
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+
+            .hero p {
+                font-size: 0.85rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .whatsapp-float {
+                width: 40px;
+                height: 40px;
+                font-size: 1.2rem;
+                bottom: 65px;
+                right: 10px;
+            }
+        }
+
+        /* Desktop nav hidden on mobile */
+        @media screen and (max-width: 768px) {
+            .desktop-nav {
+                display: none !important;
+            }
+        }
+
+        /* Mobile nav hidden on desktop */
+        @media screen and (min-width: 769px) {
+            .mobile-nav {
+                display: none !important;
+            }
+            body {
+                padding-bottom: 0;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            .top-bar, header, footer, .hero-buttons, .btn, .btn-primary, .btn-outline, .btn-whatsapp, .whatsapp-float, .mobile-nav {
+                display: none !important;
+            }
+
+            .page {
+                display: block !important;
+                padding: 0 !important;
+            }
+
+            .page:not(.active-page) {
+                display: none !important;
+            }
+
+            .card, .lawyer-card, .testimonial, .stat-item {
+                break-inside: avoid;
+                box-shadow: none !important;
+                border: 1px solid #ddd !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="wrapper">
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> +254 700 123 456</span>
+                <span><i class="fas fa-envelope"></i> info@nanyukilaw.co.ke</span>
+            </div>
+            <div>
+                <i class="fas fa-map-marker-alt"></i> Kenyatta Street, Nanyuki Town
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="wrapper">
+            <div class="logo">
+                <h1>Nanyuki Law</h1>
+                <span>Advocates &amp; Solicitors</span>
+            </div>
+            <nav class="desktop-nav">
+                <a class="active" data-page="home"><i class="fas fa-home"></i> Home</a>
+                <a data-page="lawyers"><i class="fas fa-user-tie"></i> Lawyers</a>
+                <a data-page="services"><i class="fas fa-scale-balanced"></i> Services</a>
+                <a data-page="about"><i class="fas fa-info-circle"></i> About</a>
+                <a data-page="contact"><i class="fas fa-envelope"></i> Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MOBILE BOTTOM NAVIGATION -->
+    <nav class="mobile-nav">
+        <div class="wrapper">
+            <a class="active" data-page="home">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a data-page="lawyers">
+                <i class="fas fa-user-tie"></i>
+                <span>Lawyers</span>
+            </a>
+            <a data-page="services">
+                <i class="fas fa-scale-balanced"></i>
+                <span>Services</span>
+            </a>
+            <a data-page="about">
+                <i class="fas fa-info-circle"></i>
+                <span>About</span>
+            </a>
+            <a data-page="contact">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="wrapper">
+        <div id="alertMessage" class="alert"></div>
+
+        <!-- HOME PAGE -->
+        <div id="page-home" class="page active-page">
+            <div class="hero">
+                <div class="hero-content">
+                    <div class="tag">Welcome to Nanyuki Law</div>
+                    <h2>Trusted Legal Counsel<br><span>in the Heart of Laikipia</span></h2>
+                    <p>We serve the local community with integrity, experience, and a deep commitment to justice. Your trusted advocates in Nanyuki.</p>
+                    <div class="hero-buttons">
+                        <a class="btn-primary" data-page="contact"><i class="fas fa-handshake"></i> Get in touch</a>
+                        <a class="btn-whatsapp" href="{{ url_for('schedule') }}" target="_blank"><i class="fab fa-whatsapp"></i> Schedule on WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="number">12+</div>
+                    <div class="label">Years of Service</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">5</div>
+                    <div class="label">Expert Lawyers</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">100+</div>
+                    <div class="label">Happy Clients</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">6</div>
+                    <div class="label">Practice Areas</div>
+                </div>
+            </div>
+
+            <h2 class="section-title">Core Practice Areas</h2>
+            <p class="section-subtitle">Specialized legal services tailored to your needs</p>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="icon"><i class="fas fa-building"></i></div>
+                    <h3>Corporate &amp; Commercial</h3>
+                    <p>Company formation, contracts, compliance, and business advisory.</p>
+                </div>
+                <div class="card">
+                    <div class="icon"><i class="fas fa-home"></i></div>
+                    <h3>Property &amp; Land</h3>
+                    <p>Conveyancing, leases, land disputes, and property transactions.</p>
+                </div>
+                <div class="card">
+                    <div class="icon"><i class="fas fa-gavel"></i></div>
+                    <h3>Litigation &amp; Dispute</h3>
+                    <p>Civil and commercial litigation, arbitration, and mediation.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin: 0.5rem 0 1.5rem;">
+                <a style="color: #c9a84c; font-weight: 500; font-size: 0.9rem; text-decoration: none; border-bottom: 2px solid #c9a84c; padding-bottom: 3px; cursor: pointer; transition: 0.2s;" data-page="services" onmouseover="this.style.color='#b89535'" onmouseout="this.style.color='#c9a84c'">
+                    View all services <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+
+            <h2 class="section-title">Client Testimonials</h2>
+            <p class="section-subtitle">What our clients say about us</p>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"I was impressed by the professionalism and dedication. They handled my land dispute with great care."</p>
+                    <div class="client">Peter Mwangi <span>— Business Owner</span></div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★★</div>
+                    <p>"Excellent service! The team made the divorce process less stressful and guided me every step."</p>
+                    <div class="client">Sarah Wanjiru <span>— Client</span></div>
+                </div>
+                <div class="testimonial">
+                    <div class="stars">★★★★☆</div>
+                    <p>"Great legal advice and representation. They truly understand the local legal landscape."</p>
+                    <div class="client">John Kimathi <span>— Entrepreneur</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LAWYERS PAGE -->
+        <div id="page-lawyers" class="page">
+            <h2 class="section-title">Our Team</h2>
+            <p class="section-subtitle">Experienced advocates dedicated to serving you</p>
+
+            <div class="lawyer-grid">
+                <div class="lawyer-card">
+                    <div class="avatar">JW</div>
+                    <h4>Jane Wanjiru</h4>
+                    <div class="title">Senior Advocate</div>
+                    <div class="speciality">Litigation &amp; Property</div>
+                    <div class="contact-info">
+                        <a href="mailto:jane@nanyukilaw.co.ke"><i class="fas fa-envelope"></i> jane@nanyukilaw.co.ke</a>
+                        <a href="tel:+254712345678"><i class="fas fa-phone"></i> +254 712 345 678</a>
+                    </div>
+                </div>
+
+                <div class="lawyer-card">
+                    <div class="avatar">DM</div>
+                    <h4>David Mwangi</h4>
+                    <div class="title">Advocate</div>
+                    <div class="speciality">Corporate &amp; Commercial</div>
+                    <div class="contact-info">
+                        <a href="mailto:david@nanyukilaw.co.ke"><i class="fas fa-envelope"></i> david@nanyukilaw.co.ke</a>
+                        <a href="tel:+254723456789"><i class="fas fa-phone"></i> +254 723 456 789</a>
+                    </div>
+                </div>
+
+                <div class="lawyer-card">
+                    <div class="avatar">GA</div>
+                    <h4>Grace Akinyi</h4>
+                    <div class="title">Advocate</div>
+                    <div class="speciality">Family &amp; Succession</div>
+                    <div class="contact-info">
+                        <a href="mailto:grace@nanyukilaw.co.ke"><i class="fas fa-envelope"></i> grace@nanyukilaw.co.ke</a>
+                        <a href="tel:+254734567890"><i class="fas fa-phone"></i> +254 734 567 890</a>
+                    </div>
+                </div>
+
+                <div class="lawyer-card">
+                    <div class="avatar">SK</div>
+                    <h4>Samuel Kariuki</h4>
+                    <div class="title">Associate</div>
+                    <div class="speciality">Criminal Defence</div>
+                    <div class="contact-info">
+                        <a href="mailto:samuel@nanyukilaw.co.ke"><i class="fas fa-envelope"></i> samuel@nanyukilaw.co.ke</a>
+                        <a href="tel:+254745678901"><i class="fas fa-phone"></i> +254 745 678 901</a>
+                    </div>
+                </div>
+
+                <div class="lawyer-card">
+                    <div class="avatar">FK</div>
+                    <h4>Faith N. Kamau</h4>
+                    <div class="title">Associate</div>
+                    <div class="speciality">Employment &amp; Labour</div>
+                    <div class="contact-info">
+                        <a href="mailto:faith@nanyukilaw.co.ke"><i class="fas fa-envelope"></i> faith@nanyukilaw.co.ke</a>
+                        <a href="tel:+254756789012"><i class="fas fa-phone"></i> +254 756 789 012</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lawyer-badge">
+                <i class="fas fa-check-circle"></i> All our lawyers are registered with the Law Society of Kenya (LSK)
+            </div>
+        </div>
+
+        <!-- SERVICES PAGE -->
+        <div id="page-services" class="page">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Comprehensive legal solutions across multiple sectors</p>
+
+            <div class="card-grid">
+                <div class="card">
+                    <div class="icon"><i class="fas fa-building"></i></div>
+                    <h3>Corporate &amp; Commercial</h3>
+                    <p>Company formation, contracts, compliance, mergers, and business advisory services.</p>
+                </div>
+                <div class="card">
+                    <div class="icon"><i class="fas fa-home"></i></div>
+                    <h3>Property &amp; Land</h3>
+                    <p>Conveyancing, leases, land disputes, property transactions, and title investigations.</p>
+                </div>
+                <div class="card">
+                    <div class="icon"><i class="fas fa-gavel"></i></div>
+                    <h3>Litigation &amp; Dispute</h3>
+                    <p>Civil and commercial litigation, arbitration, mediation, and dispute resolution.</p>
+                </div>
+                <div class="card">
+                    <div class="icon"><i class="fas fa-user-tie"></i></div>
+                    <h3>Family &amp; Succession</h3>
+                    <p>Divorce, child custody, succession planning, wills, and estate administration.</p>
+                </div>
+                <div class="card">
+                    <div class="icon"><i class="fas fa-briefcase"></i></div>
+                    <h3>Employment &amp; Labour</h3>
+                    <p>Employment contracts, workplace disputes, union matters, and labour law compliance.</p>
+                </div>
+                <div class="card">
+                    <div class="icon"><i class="fas fa-balance-scale"></i></div>
+                    <h3>Criminal Defence</h3>
+                    <p>Expert representation in criminal proceedings, bail applications, and appeals.</p>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h3>Need Legal Advice?</h3>
+                <p>Our team is ready to assist you with any legal matter. Contact us for a confidential consultation.</p>
+                <div class="cta-buttons">
+                    <a class="btn" data-page="contact"><i class="fas fa-calendar-check"></i> Contact Us</a>
+                    <a class="btn-whatsapp" href="{{ url_for('schedule') }}" target="_blank"><i class="fab fa-whatsapp"></i> Schedule on WhatsApp</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ABOUT PAGE -->
+        <div id="page-about" class="page">
+            <h2 class="section-title">About Our Firm</h2>
+            <p class="section-subtitle">Serving the Nanyuki community with integrity and excellence</p>
+
+            <div class="about-grid">
+                <div class="main">
+                    <p><strong>Nanyuki Law Advocates</strong> has been serving the local community for over a decade. We are a full-service firm with deep roots in Nanyuki and a reputation for integrity, professionalism, and results.</p>
+                    <p>Our team is composed of highly skilled advocates who are passionate about justice. We believe in building long-term relationships with our clients, offering clear advice, and fighting for the best outcome.</p>
+                    <p><i class="fas fa-check-circle"></i> Registered with the Law Society of Kenya (LSK)</p>
+                    <p><i class="fas fa-check-circle"></i> Member of the East Africa Law Society</p>
+                    <p><i class="fas fa-check-circle"></i> Over 12 years of service in the community</p>
+
+                    <h4 style="font-family: 'Playfair Display', serif; margin-top: 1.5rem; font-size: 1.15rem; color: #1a1a1a;">Our Values</h4>
+                    <div class="value-list">
+                        <div class="value-item"><i class="fas fa-handshake"></i> Integrity and Honesty</div>
+                        <div class="value-item"><i class="fas fa-users"></i> Client-Centered Approach</div>
+                        <div class="value-item"><i class="fas fa-scale-balanced"></i> Pursuit of Justice</div>
+                        <div class="value-item"><i class="fas fa-lightbulb"></i> Professional Excellence</div>
+                    </div>
+                </div>
+                <div class="sidebar">
+                    <h4>Office Information</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Kenyatta Street, Nanyuki Town</p>
+                    <p><i class="fas fa-phone"></i> +254 700 123 456</p>
+                    <p><i class="fas fa-envelope"></i> info@nanyukilaw.co.ke</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 8:00am – 5:30pm</p>
+                    <hr style="margin: 1rem 0; border-color: #333;">
+                    <p><strong style="color: white;">Emergency?</strong><br>Call our emergency line: <strong style="color: #c9a84c;">+254 722 000 111</strong></p>
+                    <p style="margin-top: 0.8rem; font-size: 0.85rem; background: #2d2d2d; padding: 0.8rem; border-radius: 4px; display: flex; flex-direction: column; gap: 0.2rem;">
+                        <span><i class="fas fa-user" style="color: #c9a84c;"></i> <strong style="color: white;">Joseph Kidenye</strong></span>
+                        <span><i class="fas fa-phone" style="color: #c9a84c;"></i> 0700057910</span>
+                        <span><i class="fas fa-envelope" style="color: #c9a84c;"></i> josephkidenye@gmail.com</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTACT PAGE -->
+        <div id="page-contact" class="page">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-subtitle">We're here to help. Reach out to us for any legal matter.</p>
+
+            <div class="contact-wrapper">
+                <div class="contact-form-container">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm" action="{{ url_for('contact') }}" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Mwangi" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+254 700 000 000">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your legal matter..." required></textarea>
+                        </div>
+                        <button type="submit"><i class="fas fa-paper-plane"></i> Send Enquiry</button>
+                    </form>
+                    <p style="font-size: 0.8rem; margin-top: 0.8rem; color: #888;">
+                        <i class="fas fa-lock" style="color: #c9a84c;"></i> Your information is confidential and secure.
+                    </p>
+                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #eee; text-align: center;">
+                        <a href="{{ url_for('schedule') }}" target="_blank" class="btn-whatsapp" style="display: inline-block; width: 100%; text-align: center;">
+                            <i class="fab fa-whatsapp"></i> Schedule via WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-info-side">
+                    <div class="info-card">
+                        <h4>Contact Details</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> Kenyatta Street, Nanyuki Town</p>
+                        <p><i class="fas fa-phone"></i> +254 700 123 456</p>
+                        <p><i class="fas fa-envelope"></i> info@nanyukilaw.co.ke</p>
+                        <p><i class="fas fa-clock"></i> Mon-Fri: 8:00am – 5:30pm</p>
+                        <hr style="margin: 0.8rem 0; border-color: #eee;">
+                        <p style="font-size: 0.85rem;">
+                            <i class="fas fa-user" style="color: #c9a84c;"></i> <strong>Joseph Kidenye</strong><br>
+                            <i class="fas fa-phone" style="color: #c9a84c;"></i> 0700057910
+                        </p>
+                    </div>
+
+                    <div class="map-box">
+                        <i class="fas fa-map"></i>
+                        <p style="font-weight: 500;">Find us in Nanyuki Town</p>
+                        <p style="font-size: 0.85rem; opacity: 0.7;">Kenyatta Street, opposite the old post office</p>
+                    </div>
+
+                    <div style="margin-top: 1.2rem; background: #f8f6f2; padding: 1.2rem; border-radius: 4px; text-align: center;">
+                        <p style="font-weight: 600; font-size: 0.9rem; color: #1a1a1a;">Emergency legal assistance?</p>
+                        <p style="font-size: 0.85rem;">Call: <strong style="color: #c9a84c;">+254 722 000 111</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a href="{{ url_for('schedule') }}" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="wrapper">
+            <div class="footer-text">
+                <p>&copy; 2026 <strong>Nanyuki Law Advocates</strong> — serving Laikipia with integrity.</p>
+                <p class="contact-line">Contact: Joseph Kidenye | 0700057910 | josephkidenye@gmail.com</p>
+            </div>
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i> <span>Facebook</span></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i> <span>Instagram</span></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i> <span>Twitter</span></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i> <span>LinkedIn</span></a>
+                <a href="mailto:josephkidenye@gmail.com"><i class="fas fa-envelope"></i> <span>Email</span></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navigation
+        const navLinks = document.querySelectorAll('nav a[data-page]');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav a[data-page]');
+        const pages = {
+            home: document.getElementById('page-home'),
+            lawyers: document.getElementById('page-lawyers'),
+            services: document.getElementById('page-services'),
+            about: document.getElementById('page-about'),
+            contact: document.getElementById('page-contact')
+        };
+
+        function navigateTo(pageId) {
+            // Hide all pages
+            Object.values(pages).forEach(p => p.classList.remove('active-page'));
+            if (pages[pageId]) pages[pageId].classList.add('active-page');
+
+            // Update desktop nav
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.dataset.page === pageId) link.classList.add('active');
+            });
+
+            // Update mobile nav
+            mobileNavLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.dataset.page === pageId) link.classList.add('active');
+            });
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Desktop nav clicks
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                navigateTo(link.dataset.page);
+            });
+        });
+
+        // Mobile nav clicks
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                navigateTo(link.dataset.page);
+            });
+        });
+
+        // Delegate for any [data-page] clicks
+        document.addEventListener('click', function(e) {
+            const el = e.target.closest('[data-page]');
+            if (el) {
+                e.preventDefault();
+                const page = el.dataset.page;
+                if (page && pages[page]) navigateTo(page);
+            }
+        });
+
+        // Flash messages from Flask
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const alert = document.getElementById('alertMessage');
+                        alert.textContent = '✅ {{ message }}';
+                        alert.className = 'alert show';
+                        setTimeout(() => { alert.className = 'alert'; }, 6000);
+                    });
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </script>
+</body>
+</html>
